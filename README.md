@@ -16,7 +16,7 @@ of Kubernetes to the latest version you may have to go through more than one ite
 
 1. Update the `TARGET_MAJOR_MINOR_VERSION` in the `upgrade.sh` script to something like `1.19`.
 2. Update the values for `MASTER_NODE` and the `WORKER_NODES` array in the `upgrade.sh` script.
-3. Execute the `upgrade.sh` script. You will be given the option to continue or skip certain sections of the upgrade as it progresses.
+3. Execute the `upgrade.sh` script from a host that's *not* part of the cluster you're upgrading. You will be given the option to continue or skip certain sections of the upgrade as it progresses.
 
 ## References
 
