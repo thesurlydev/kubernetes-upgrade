@@ -2,7 +2,7 @@
 
 set -e
 
-TARGET_MAJOR_MINOR_VERSION=1.19
+TARGET_MAJOR_MINOR_VERSION=1.22
 MASTER_NODE=nuc1
 WORKER_NODES=( nuc2 nuc3 nuc4 )
 
@@ -10,7 +10,7 @@ CURRENT_VERSION=$(ssh $MASTER_NODE "kubeadm version -o short | cut -d'v' -f2")
 TARGET_VERSION=$(ssh $MASTER_NODE "sudo apt-cache madison kubeadm | grep '${TARGET_MAJOR_MINOR_VERSION}' | sort -r | head -1 | cut -d'|' -f2 | tr -d ' '")
 
 echo "CURRENT_VERSION: $CURRENT_VERSION"
-echo " TARGET_VERSION: $TARGET_VERSION"
+echo " TARGET_VERSION: $TARGET_MAJOR_MINOR_VERSION"
 echo ""
 
 while true; do
